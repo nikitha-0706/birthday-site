@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday SivaSakthi</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffd6eb, #f3c6ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #5a004f;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 50px rgba(194, 24, 91, 0.35);
+}
+
+h1 {
+    font-size: 44px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(194, 24, 91, 0.6);
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.9;
+    margin: 12px 0;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 22px;
+    color: #3d0036; /* darker than text */
+    animation: floatUp linear forwards;
+    pointer-events: none;
+    opacity: 1;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-120vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday SivaSakthi</h1>
+
+    <p>On your special day, I pray life holds you gently and blesses you with everything your heart desires.</p>
+    <p>May success chase you, peace stay with you, and love surround you — especially mine.</p>
+    <p>Your heart is full of kindness, truly a rare gem in this generation.</p>
+    <p>You are my world, my favorite person, and my everything.</p>
+    <p>I’ll always stand by you, no matter what.</p>
+    <p>I feel so blessed to love you.</p>
+    <p><strong>Have the most beautiful birthday, my love. ❤️</strong></p>
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 15) + "px";
+
+    const duration = 6 + Math.random() * 3;
+    heart.style.animationDuration = duration + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+}
+
+/* Start immediately with initial hearts */
+for (let i = 0; i < 70; i++) {
+    setTimeout(createHeart, i * 80);
+}
+
+/* Continuous hearts */
+setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
