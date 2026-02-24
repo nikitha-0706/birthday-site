@@ -75,16 +75,16 @@ p {
 
 <!-- 🎵 AUDIO SECTION -->
 <audio id="bg-music" loop>
-    <source src="birthday-music.mp3" type="audio/mpeg">
+  <source src="birthday.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 const music = document.getElementById("bg-music");
 
-/* Play music after first click (browser autoplay restriction fix) */
 document.addEventListener("click", function () {
     music.play();
 }, { once: true });
+</script>
 
 function createHeart() {
     const heart = document.createElement("div");
@@ -113,3 +113,4 @@ setInterval(createHeart, 200);
 
 </body>
 </html>
+
