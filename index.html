@@ -57,21 +57,6 @@ p {
     from { transform: translateY(0); }
     to { transform: translateY(-120vh); }
 }
-
-#play-music {
-    margin-top: 25px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    background-color: #c2185b;
-    color: white;
-    box-shadow: 0 0 15px rgba(194, 24, 91, 0.6);
-}
-#play-music:hover {
-    background-color: #a01749;
-}
 </style>
 </head>
 
@@ -86,8 +71,6 @@ p {
     <p>Your happiness is my everything, so Be Happy always.</p>
     <p>I’ll always stand by you, no matter what.</p>
     <p><strong>Have the most beautiful birthday, my love. ❤️</strong></p>
-
-    <button id="play-music">Play Music</button>
 </div>
 
 <!-- Audio -->
@@ -124,13 +107,11 @@ for (let i = 0; i < 70; i++) {
 /* Continuous hearts */
 setInterval(createHeart, 200);
 
-// Play audio on button click
+// Play music on first click anywhere
 const music = document.getElementById("bg-music");
-const btn = document.getElementById("play-music");
-
-btn.addEventListener("click", () => {
-    music.play().catch(err => console.log("Audio error:", err));
-});
+document.addEventListener("click", function () {
+    music.play().catch(() => {});
+}, { once: true });
 </script>
 
 </body>
