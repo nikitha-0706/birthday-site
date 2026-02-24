@@ -47,19 +47,15 @@ p {
     position: fixed;
     bottom: -20px;
     font-size: 22px;
-    color: #3d0036; /* darker than text */
+    color: #3d0036;
     animation: floatUp linear forwards;
     pointer-events: none;
     opacity: 1;
 }
 
 @keyframes floatUp {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-120vh);
-    }
+    from { transform: translateY(0); }
+    to { transform: translateY(-120vh); }
 }
 </style>
 </head>
@@ -72,13 +68,24 @@ p {
     <p>On your special day, I pray life holds you gently and blesses you with everything your heart desires.</p>
     <p>May success chase you, peace stay with you, and love surround you — especially mine.</p>
     <p>Your heart is full of kindness, truly a rare gem in this generation.</p>
-    <p>You are my world, my favorite person, and my everything.</p>
+    <p>Your happiness is my everything, so be happy always.</p>
     <p>I’ll always stand by you, no matter what.</p>
-    <p>I feel so blessed to love you.</p>
     <p><strong>Have the most beautiful birthday, my love. ❤️</strong></p>
 </div>
 
+<!-- 🎵 AUDIO SECTION -->
+<audio id="bg-music" loop>
+    <source src="birthday-music.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+const music = document.getElementById("bg-music");
+
+/* Play music after first click (browser autoplay restriction fix) */
+document.addEventListener("click", function () {
+    music.play();
+}, { once: true });
+
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -97,12 +104,10 @@ function createHeart() {
     }, duration * 1000);
 }
 
-/* Start immediately with initial hearts */
 for (let i = 0; i < 70; i++) {
     setTimeout(createHeart, i * 80);
 }
 
-/* Continuous hearts */
 setInterval(createHeart, 200);
 </script>
 
